@@ -4,6 +4,12 @@
 
 Um jogo 2D no estilo **Beat 'em Up** clássico desenvolvido em **Unity 6**, com combate lateral, múltiplos inimigos e sistema de vida para jogador e adversários.
 
+## 🌐 Demo
+
+Acesse a demo online:
+
+https://danielribeir0.github.io/Jogo-2D-Beat-em-Up/Demo/
+
 ---
 
 ## 🎮 Sobre o Jogo
