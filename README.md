@@ -8,7 +8,7 @@ Um jogo 2D no estilo **Beat 'em Up** clássico desenvolvido em **Unity 6**, com 
 
 Acesse a demo online:
 
-https://danielribeir0.github.io/Jogo-2D-Beat-em-Up/Demo/
+<a href="https://danielribeir0.github.io/Jogo-2D-Beat-em-Up/Demo/" target="_blank" rel="noreferrer noopener">https://danielribeir0.github.io/Jogo-2D-Beat-em-Up/Demo/</a>
 
 ---
 
