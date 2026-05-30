@@ -163,6 +163,3 @@ Desenvolvido por **[Daniel Ribeiro](https://github.com/DanielRibeir0)**
 
 ---
 
-## 📄 Licença
-
-Este projeto está sob licença MIT.
