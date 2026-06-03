@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D _playerRigidbody2D;
     private Animator _playerAnimator;
 
-    public float _playerSpeed = 3f;
+    private const float _playerSpeed = 3f;
     public Vector2 _playerDirection;
 
     private bool _playerFaceRight = true;
