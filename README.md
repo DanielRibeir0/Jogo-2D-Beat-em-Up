@@ -1,171 +1,474 @@
 # 🥊 Jogo 2D Beat 'em Up
 
-> ⚠️ Projeto em desenvolvimento ativo — funcionalidades podem mudar a qualquer momento.
-
-Um jogo 2D no estilo **Beat 'em Up** clássico desenvolvido em **Unity 6**, com combate lateral, múltiplos inimigos e sistema de vida para jogador e adversários.
-
-## 🌐 Demo
-
-Acesse a demo online:
-
-<a href="https://danielribeir0.github.io/Jogo-2D-Beat-em-Up/Demo/" target="_blank" rel="noreferrer noopener">https://danielribeir0.github.io/Jogo-2D-Beat-em-Up/Demo/</a>
+> ⚠️ Projeto em desenvolvimento ativo.
+>
+> Inspirado em clássicos como **Final Fight**, **Streets of Rage**, **Cadillacs & Dinosaurs** e **The Punisher**.
+>
+> Desenvolvido com **Unity 6**, utilizando **URP**, **C#** e **Cinemachine**.
 
 ---
 
-## 🎮 Sobre o Jogo
+# 🌐 Demo Online
 
-Inspirado nos clássicos do gênero Beat 'em Up, o jogador percorre fases avançando pela tela enquanto enfrenta ondas de inimigos em combate corpo a corpo. O projeto está sendo construído com foco em animações fluidas, sistema de dano e uma jogabilidade responsiva.
+🎮 Jogue agora:
 
-<img width="1408" height="1018" alt="image" src="https://github.com/user-attachments/assets/c06bae80-6fd4-428a-8231-f27b7c81e7e8" />
-
-
+👉 https://danielribeir0.github.io/Jogo-2D-Beat-em-Up/Demo/
 
 ---
 
-## 🚧 Status do Desenvolvimento
+# 📸 Visão Geral
 
-### ✅ Implementado
-- [x] Movimentação do jogador
-- [x] Sistema de combate básico
-- [x] IA básica de inimigos
-- [x] Barra de vida (jogador e inimigo)
-- [x] Câmera cinemática (Cinemachine)
-- [x] Tileset / Cenário
-- [x] Canvas de HUD
-- [x] Sistema de eventos
+Um Beat 'em Up 2D clássico onde o jogador enfrenta ondas de inimigos em combate corpo a corpo enquanto avança pelas fases.
 
-### 🔄 Em Desenvolvimento
-- [ ] Mais fases
+### Principais características
+
+- Combate lateral estilo arcade
+- Sistema de combos
+- Inimigos com IA
+- Sistema de vida completo
+- HUD animada
+- Sistema baseado em eventos
+- Estrutura preparada para expansão
+
+---
+
+# 🚧 Status do Projeto
+
+## ✅ Implementado
+
+### 🎮 Jogador
+
+- [x] Movimentação horizontal
+- [x] Movimentação vertical
+- [x] Flip automático do personagem
+- [x] Rigidbody2D
+- [x] Sistema de colisão
+- [x] Sistema de vida
+- [x] Sistema de dano
+- [x] Sistema de morte
+
+### 🥊 Combate
+
+- [x] Jab
+- [x] Punch
+- [x] Kick
+- [x] Combo de socos
+- [x] Hit Detection
+- [x] Dano em inimigos
+
+### 🤖 Inimigos
+
+- [x] IA básica
+- [x] Detecção do jogador
+- [x] Perseguição
+- [x] Controle de distância
+- [x] Ataque automático
+- [x] Receber dano
+- [x] Morte
+- [x] Barra de vida própria
+
+### ❤️ Sistema de Vida
+
+- [x] PlayerHealth
+- [x] EnemyHealth compartilhado
+- [x] Eventos de atualização
+- [x] Barra verde
+- [x] Barra vermelha animada
+- [x] Morte por vida zerada
+
+### 🎨 Interface
+
+- [x] Canvas
+- [x] HUD do jogador
+- [x] HUD do inimigo
+- [x] Barras de vida animadas
+- [x] Atualização via eventos
+
+### 🎥 Câmera
+
+- [x] Cinemachine
+- [x] Follow Target
+- [x] Limites de fase
+
+### 🗺️ Cenário
+
+- [x] Tileset
+- [x] Rua principal
+- [x] Objetos de cenário
+- [x] Barril decorativo
+
+---
+
+## 🔄 Em Desenvolvimento
+
+### 🎯 Gameplay
+
 - [ ] Sistema de pontuação
-- [ ] Menu principal e tela de game over
-- [ ] Efeitos sonoros e trilha
+- [ ] Contador de inimigos derrotados
+- [ ] Sistema de waves
+- [ ] Respawn de inimigos
+- [ ] Progressão da fase
 
-### ⏳ Pendente
-- [ ] Build final
+### 🎮 Fluxo do Jogo
 
----
+- [ ] Game Over
+- [ ] Tela de vitória
+- [ ] Reiniciar fase
+- [ ] Próxima fase
 
-## 🛠️ Tecnologias Utilizadas
+### 🔊 Áudio
 
-- **Unity 6** (6000.1.6f1)
-- **Universal Render Pipeline (URP)**
-- **Cinemachine** — câmera dinâmica e seguimento do jogador
-- **Unity Input System** — controles modernos e configuráveis
-- **2D Sprite Renderer** com tiling de tileset
-- **C#** — scripts de gameplay, IA e sistema de eventos
+- [ ] Sons de soco
+- [ ] Sons de chute
+- [ ] Sons de dano
+- [ ] Sons de morte
+- [ ] Música da fase
 
----
+### 🖥️ Interface
 
-## 📁 Estrutura do Projeto
-
-    Assets/
-    ├── Animations/       # Animações dos personagens
-    ├── Plugins/          # Plugins externos
-    ├── Scenes/           # Cenas do jogo
-    ├── Scripts/          # Lógica de gameplay em C#
-    └── Settings/         # Configurações do Input System e URP
-
----
-
-## 📜 Scripts
-
-### ✅ Implementados
-- [x] `PlayerHealth.cs` — Sistema de vida do jogador
-- [x] `PlayerController.cs` — Controle e movimentação
-- [x] `HealthBarUI.cs` — Barra de vida animada na HUD
-
-### ⏳ Pendentes
-- [ ] `EnemyHealth.cs` — Vida, dano e morte dos inimigos
-- [ ] `EnemyController.cs` — IA de patrulha, detecção e ataque ao jogador
-- [ ] `EnemyAnimator.cs` — Controle das animações do inimigo
-- [ ] `AttackHitbox.cs` — Colisão dos socos/chutes com hitbox ativa no frame do golpe
-- [ ] `ScoreManager.cs` — Pontuação por inimigo derrotado
-- [ ] `GameManager.cs` — Fluxo geral: início, game over, vitória, troca de fase
-- [ ] `AudioManager.cs` — Efeitos sonoros e trilha sonora
-- [ ] `MainMenuController.cs` — Tela inicial e navegação de menus
-- [ ] `GameOverScreen.cs` — Tela de game over com opção de reiniciar
-- [ ] `LevelLoader.cs` — Carregamento e transição entre fases
-- [ ] `EnemySpawner.cs` — Geração de ondas de inimigos por fase
+- [ ] Menu Principal
+- [ ] Tela de Pause
+- [ ] Tela de Vitória
+- [ ] Tela de Game Over
 
 ---
 
-## 🔍 Documentação dos Scripts
+## 📋 Roadmap
 
-### `PlayerHealth.cs` — Sistema de Vida do Jogador
+### Fase 1 — Core Gameplay
 
-Gerencia os pontos de vida do jogador e dispara eventos para atualizar a HUD.
+- [x] Jogador
+- [x] Combate
+- [x] IA básica
+- [x] Sistema de vida
+- [x] HUD
 
-| Método | Descrição |
-|---|---|
-| `Start()` | Inicializa `currentHealth` com `maxHealth` se estiver zerado e notifica a HUD via evento |
-| `Update()` | Detecta alterações manuais feitas no Inspector em tempo real |
-| `TakeDamage(int amount)` | Reduz a vida pelo valor informado, dispara `onHealthChanged` e `onDeath` se chegar a zero |
-| `Heal(int amount)` | Recupera vida sem ultrapassar o máximo e notifica a HUD |
+### Fase 2 — Progressão
 
-> **Eventos:** `onHealthChanged(currentHealth, maxHealth)` e `onDeath` — configuráveis direto no Inspector do Unity.
+- [ ] Pontuação
+- [ ] Respawn
+- [ ] Waves
+- [ ] Vitória
+- [ ] Game Over
 
----
+### Fase 3 — Polimento
 
-### `PlayerController.cs` — Controle e Movimentação do Jogador
+- [ ] Efeitos visuais
+- [ ] Sons
+- [ ] Música
+- [ ] Feedback de impacto
 
-Responsável por capturar inputs, mover o personagem, virar o sprite e controlar as animações de combate.
+### Fase 4 — Conteúdo
 
-| Método | Descrição |
-|---|---|
-| `Start()` | Inicializa Rigidbody2D, Animator e velocidade do jogador |
-| `Update()` | Chama `PlayerMove()` e `UpdateAnimator()` a cada frame |
-| `PlayerMove()` | Lê os eixos de input, controla virada de sprite e detecta os inputs de ataque (X = soco, C = chute) |
-| `FixedUpdate()` | Move o Rigidbody2D com `MovePosition` e atualiza o estado `_isWalk` |
-| `UpdateAnimator()` | Atualiza o parâmetro `isWalk` no Animator |
-| `Flip()` | Inverte a direção do sprite rotacionando 180° no eixo Y |
-| `PlayerJab()` | Dispara o trigger `isJab` no Animator (1º e 2º soco do combo) |
-| `PlayerPunch()` | Dispara o trigger `isPunch` no Animator (3º soco — golpe final do combo) |
-| `PlayerKick()` | Dispara o trigger `isKick` no Animator |
-| `PunchController()` *(Coroutine)* | Aguarda 0,75s e reseta o contador do combo se nenhum soco for dado no intervalo |
-
-> **Sistema de combo:** Dois jabs seguidos de um punch (`X, X, X`). O contador reseta automaticamente se o jogador demorar mais de 0,75s entre os socos.
+- [ ] Novos inimigos
+- [ ] Chefão
+- [ ] Itens
+- [ ] Armas
+- [ ] Segunda fase
 
 ---
 
-### `HealthBarUI.cs` — Barra de Vida com Animação
+# 🛠️ Tecnologias Utilizadas
 
-Controla a barra de vida visual na HUD, com barra verde (vida atual) e barra vermelha (dano com delay animado).
-
-| Método | Descrição |
-|---|---|
-| `Start()` | Valida as referências e armazena a largura máxima das barras |
-| `OnHealthChanged(int current, int max)` | Atualiza a barra verde instantaneamente; a barra vermelha aguarda um delay antes de seguir |
-| `Update()` | Move a barra vermelha suavemente em direção à barra verde após o delay |
-
-> **Comportamento visual:** Ao tomar dano, a barra verde cai imediatamente e a vermelha acompanha com atraso animado — efeito clássico de jogos de luta. Na cura, ambas sobem juntas.
-
----
-
-## 🕹️ Como Rodar o Projeto
-
-**Pré-requisitos**
-- [Unity Hub](https://unity.com/download) instalado
-- Unity **6000.1.6f1** (ou compatível)
-
-**Passos**
-
-1. Clone o repositório: `git clone https://github.com/DanielRibeir0/Jogo-2D-Beat-em-Up.git`
-2. Abra o **Unity Hub** e clique em **Add project from disk**
-3. Selecione a pasta clonada
-4. Abra a cena `SampleScene` em `Assets/Scenes/`
-5. Pressione **Play** no editor para testar
+| Tecnologia | Uso |
+|------------|------|
+| Unity 6 | Engine principal |
+| URP | Renderização |
+| C# | Programação |
+| Cinemachine | Câmera |
+| Input System | Controles |
+| Sprite Renderer | Renderização 2D |
+| Canvas UI | Interface |
+| GitHub Pages | Hospedagem da Demo |
 
 ---
 
-## 🤝 Contribuindo
+# 📁 Estrutura do Projeto
 
-O projeto está em desenvolvimento pessoal, mas sugestões e feedbacks são bem-vindos! Abra uma [issue](https://github.com/DanielRibeir0/Jogo-2D-Beat-em-Up/issues) para reportar bugs ou propor melhorias.
+```text
+Assets
+│
+├── Animations
+│   ├── Player
+│   └── Enemy
+│
+├── Plugins
+│
+├── Scenes
+│   └── SampleScene
+│
+├── Scripts
+│   ├── PlayerController.cs
+│   ├── PlayerHealth.cs
+│   ├── EnemyController.cs
+│   └── HealthBarUI.cs
+│
+└── Settings
+```
 
 ---
 
-## 👨‍💻 Autor
+# 📜 Scripts
 
-Desenvolvido por **[Daniel Ribeiro](https://github.com/DanielRibeir0)**
+## ✅ PlayerController.cs
+
+Responsável por:
+
+- Movimentação
+- Leitura dos inputs
+- Combo de socos
+- Chute
+- Flip do personagem
+- Aplicação de dano
+
+### Combos
+
+```text
+X → Jab
+
+X → Jab
+
+X → Punch
+```
+
+### Ataque Alternativo
+
+```text
+C → Kick
+```
 
 ---
 
+## ✅ PlayerHealth.cs
+
+Responsável por:
+
+- Vida máxima
+- Vida atual
+- Dano
+- Cura
+- Eventos
+- Morte
+
+### Eventos
+
+```csharp
+onHealthChanged
+onDeath
+```
+
+---
+
+## ✅ EnemyController.cs
+
+Responsável por:
+
+- IA do inimigo
+- Detecção
+- Perseguição
+- Distância de ataque
+- Ataque automático
+- Dano
+- Morte
+
+### Estados
+
+```text
+Idle
+
+Chase
+
+Attack
+
+Dead
+```
+
+---
+
+## ✅ HealthBarUI.cs
+
+Responsável pela HUD.
+
+### Recursos
+
+- Barra verde
+- Barra vermelha
+- Delay de dano
+- Atualização por evento
+
+---
+
+# 🎯 Próximas Funcionalidades
+
+## 🏆 Sistema de Pontuação
+
+```text
++100 por inimigo derrotado
+```
+
+Exemplo:
+
+```text
+Score: 1200
+```
+
+---
+
+## 👊 Sistema de Waves
+
+```text
+Wave 1
+3 inimigos
+
+Wave 2
+5 inimigos
+
+Wave 3
+8 inimigos
+```
+
+---
+
+## 🚪 Progressão de Fase
+
+```text
+Portão fecha
+
+↓
+
+Mata todos os inimigos
+
+↓
+
+Portão abre
+
+↓
+
+Continua
+```
+
+---
+
+## 🍔 Itens de Cura
+
+- [ ] Hambúrguer
+- [ ] Pizza
+- [ ] Frango
+- [ ] Refrigerante
+
+---
+
+## 🛢️ Barris Destrutíveis
+
+- [ ] Recebem dano
+- [ ] Quebram
+- [ ] Soltam itens
+
+---
+
+## ⚔️ Armas
+
+- [ ] Taco
+- [ ] Cano
+- [ ] Faca
+- [ ] Bastão
+
+---
+
+## 👹 Novos Inimigos
+
+### Punk
+
+- [ ] Rápido
+- [ ] Pouca vida
+
+### Brutamontes
+
+- [ ] Muito dano
+- [ ] Muita vida
+
+### Corredor
+
+- [ ] Ataques rápidos
+- [ ] Alta velocidade
+
+---
+
+## 💀 Chefão
+
+Características planejadas:
+
+- [ ] Vida elevada
+- [ ] Ataque forte
+- [ ] Corrida
+- [ ] Golpe especial
+- [ ] Segunda fase de combate
+
+---
+
+# 🎮 Como Rodar o Projeto
+
+## Pré-requisitos
+
+- Unity Hub
+- Unity 6000.1.6f1
+
+---
+
+## Instalação
+
+Clone o projeto:
+
+```bash
+git clone https://github.com/DanielRibeir0/Jogo-2D-Beat-em-Up.git
+```
+
+Abra pelo Unity Hub:
+
+```text
+Add Project From Disk
+```
+
+Selecione a pasta do projeto.
+
+Abra:
+
+```text
+Assets/Scenes/SampleScene
+```
+
+Clique em:
+
+```text
+▶ Play
+```
+
+---
+
+# 🤝 Contribuições
+
+Sugestões, melhorias e feedbacks são sempre bem-vindos.
+
+Abra uma **Issue** ou envie um **Pull Request**.
+
+---
+
+# 👨‍💻 Autor
+
+### Daniel Ribeiro
+
+GitHub:
+
+🔗 https://github.com/DanielRibeir0
+
+---
+
+# ⭐ Apoie o Projeto
+
+Se gostou do projeto:
+
+- ⭐ Dê uma estrela no GitHub
+- 🐛 Reporte bugs
+- 💡 Sugira melhorias
+
+Isso ajuda bastante no desenvolvimento.
