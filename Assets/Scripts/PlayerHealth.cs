@@ -5,19 +5,23 @@ public class PlayerHealth : MonoBehaviour
 {
     [Header("Configurações de Vida")]
     public int maxHealth = 100;
-    public int currentHealth;
+    public int currentHealth = 100;
 
     [Header("Eventos")]
     public UnityEvent<int, int> onHealthChanged;
     public UnityEvent onDeath;
 
     private int lastHealth;
+    private bool isDead;
 
     private void Start()
     {
+        if (maxHealth <= 0)
+            maxHealth = 100;
+
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
             currentHealth = maxHealth;
 
         lastHealth = currentHealth;
@@ -27,15 +31,17 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        // Detecta alterações feitas manualmente no Inspector
         if (currentHealth != lastHealth)
         {
             currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
             onHealthChanged?.Invoke(currentHealth, maxHealth);
 
-            if (currentHealth <= 0)
+            if (currentHealth <= 0 && !isDead)
+            {
+                isDead = true;
                 onDeath?.Invoke();
+            }
 
             lastHealth = currentHealth;
         }
@@ -43,22 +49,31 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if (currentHealth <= 0)
+        if (isDead || amount <= 0)
             return;
 
-        currentHealth = Mathf.Max(0, currentHealth - amount);
+        currentHealth = Mathf.Clamp(currentHealth - amount, 0, maxHealth);
 
         onHealthChanged?.Invoke(currentHealth, maxHealth);
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isDead)
+        {
+            isDead = true;
             onDeath?.Invoke();
+        }
 
         lastHealth = currentHealth;
     }
 
     public void Heal(int amount)
     {
-        currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
+        if (amount <= 0)
+            return;
+
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+
+        if (currentHealth > 0)
+            isDead = false;
 
         onHealthChanged?.Invoke(currentHealth, maxHealth);
 

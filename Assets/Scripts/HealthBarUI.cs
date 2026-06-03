@@ -23,41 +23,28 @@ public class HealthBarUI : MonoBehaviour
             return;
         }
 
-        maxWidth = lifeBar.sizeDelta.x;
+        RectTransform parentRect = GetComponent<RectTransform>();
+        maxWidth = parentRect.sizeDelta.x;
+
         targetWidth = maxWidth;
 
-        Vector2 size = lifeBar.sizeDelta;
-        size.x = maxWidth;
-        lifeBar.sizeDelta = size;
-
-        size = redBar.sizeDelta;
-        size.x = maxWidth;
-        redBar.sizeDelta = size;
+        SetWidth(lifeBar, maxWidth);
+        SetWidth(redBar, maxWidth);
     }
 
     public void OnHealthChanged(int current, int max)
     {
-        float percent = Mathf.Clamp01((float)current / max);
+        if (max <= 0) return;
 
+        float percent = Mathf.Clamp01((float)current / max);
         targetWidth = maxWidth * percent;
 
-        // Barra verde muda instantaneamente
-        Vector2 lifeSize = lifeBar.sizeDelta;
-        lifeSize.x = targetWidth;
-        lifeBar.sizeDelta = lifeSize;
+        SetWidth(lifeBar, targetWidth);
 
-        // Se perdeu vida, a vermelha espera antes de seguir
         if (redBar.sizeDelta.x > targetWidth)
-        {
             timer = redBarDelay;
-        }
         else
-        {
-            // Cura: as duas acompanham imediatamente
-            Vector2 redSize = redBar.sizeDelta;
-            redSize.x = targetWidth;
-            redBar.sizeDelta = redSize;
-        }
+            SetWidth(redBar, targetWidth);
     }
 
     private void Update()
@@ -68,14 +55,19 @@ public class HealthBarUI : MonoBehaviour
             return;
         }
 
-        Vector2 redSize = redBar.sizeDelta;
-
-        redSize.x = Mathf.MoveTowards(
-            redSize.x,
+        float width = Mathf.MoveTowards(
+            redBar.sizeDelta.x,
             targetWidth,
             redBarSpeed * Time.deltaTime
         );
 
-        redBar.sizeDelta = redSize;
+        SetWidth(redBar, width);
+    }
+
+    private void SetWidth(RectTransform rect, float width)
+    {
+        Vector2 size = rect.sizeDelta;
+        size.x = width;
+        rect.sizeDelta = size;
     }
 }
